@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 3551607966740094105}
   - component: {fileID: 8008979996583126065}
   - component: {fileID: 8295889921071074708}
+  - component: {fileID: 6102981093130554592}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -375,6 +376,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a188a07a6df44844a660eeefd0563d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDash:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6102981093130554592}
+        m_TargetAssemblyTypeName: Player.Dash, Assembly-CSharp
+        m_MethodName: TryDash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!143 &8295889921071074708
 CharacterController:
   m_ObjectHideFlags: 0
@@ -400,3 +416,36 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6102981093130554592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277144627838955755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4efa523cf1a2d9489365ada37f3e14e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashesAllowed: 3
+  dashTimer: 1
+  dashCooldown: 3.45
+  dashSpeed: 25
+  dashAudioSource: {fileID: 4022727239811560921}
+  dashClip: {fileID: 0}
+  OnDash:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3551607966740094105}
+        m_TargetAssemblyTypeName: Player.PlayerController, Assembly-CSharp
+        m_MethodName: UpdateMoveSpeed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
