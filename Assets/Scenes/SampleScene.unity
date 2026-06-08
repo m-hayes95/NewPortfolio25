@@ -1493,6 +1493,11 @@ Transform:
   - {fileID: 767300364}
   m_Father: {fileID: 309064360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &164238589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2808001186187033729, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+  m_PrefabInstance: {fileID: 1619980603462520004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &164238590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4838040094067003737, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
@@ -2997,6 +3002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 253049467}
+  - component: {fileID: 253049468}
   m_Layer: 0
   m_Name: Light Puzzle
   m_TagString: Untagged
@@ -3023,6 +3029,23 @@ Transform:
   - {fileID: 1860768922}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &253049468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253049466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15588e33dc0bb5544b4871a43ad4ef2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 164238589}
+  - {fileID: 860042692}
+  - {fileID: 364634196}
+  - {fileID: 1420551925}
 --- !u!1 &253252301
 GameObject:
   m_ObjectHideFlags: 0
@@ -4330,6 +4353,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 189361094}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &364634196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2808001186187033729, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+  m_PrefabInstance: {fileID: 764077499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &371515449
 GameObject:
   m_ObjectHideFlags: 0
@@ -9932,6 +9960,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a457d02d5bf10c9459386d5931ca3a94, type: 3}
+--- !u!1 &860042692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2808001186187033729, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+  m_PrefabInstance: {fileID: 1193430430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &866491322
 GameObject:
   m_ObjectHideFlags: 0
@@ -15350,6 +15383,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1060825447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1420551925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2808001186187033729, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+  m_PrefabInstance: {fileID: 1860768921}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1422749942
 GameObject:
   m_ObjectHideFlags: 0

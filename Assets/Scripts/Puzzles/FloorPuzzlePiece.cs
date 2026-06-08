@@ -8,7 +8,9 @@ namespace Puzzles
         [SerializeField] private FloorPuzzleScriptableObject floorData;
 
         private bool isOn = false;
+        private bool isLocked = false; // locked when won
         private Renderer _renderer;
+        
 
         private void Awake()
         {
@@ -25,9 +27,25 @@ namespace Puzzles
             return floorData.iD;
         }
 
+        public bool GetIsOn()
+        {
+            return isOn;
+        }
+
+        public void ResetTile()
+        {
+            if (isLocked) return;
+            isOn = false;
+            _renderer.material = floorData.offMaterial;
+        }
+        public void LockTile()
+        {
+            isLocked = true;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<PlayerController>())
+            if (other.GetComponent<PlayerController>() && !isLocked)
             {
                 SwitchTileStatus();
             }
@@ -35,12 +53,14 @@ namespace Puzzles
 
         private void SwitchTileStatus()
         {
+            if(isLocked) return;
             isOn = !isOn;
             Invoke(nameof(UpdateMaterial), 0f);
         }
 
         private void UpdateMaterial()
         {
+            if(isLocked) return;
             _renderer.material = isOn ? floorData.onMaterial : floorData.offMaterial;
             // play click sound
         }
