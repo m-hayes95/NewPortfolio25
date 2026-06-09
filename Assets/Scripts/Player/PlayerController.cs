@@ -17,13 +17,14 @@ namespace Player
         // Components
         private PlayerInput input;
         private CharacterController controller;
+        private Animator animator;
         //private Animator animator;
 
         // non-editable
         private float currentMoveSpeed;
 
         // Animation refs
-        //private readonly int Speed = Animator.StringToHash("Speed");  
+        //private readonly int = Animator.StringToHash("Speed");  
         #endregion
 
         #region Unity Callbacks
@@ -31,6 +32,7 @@ namespace Player
         {
             input = GetComponent<PlayerInput>();
             controller = GetComponent<CharacterController>();
+            animator = GetComponent<Animator>();
         }
         private void Start()
         {
@@ -72,9 +74,13 @@ namespace Player
             if (moveDirection != Vector3.zero)
             {
                 Rotate(moveDirection);
+                animator.SetBool("IsRunning", true);
             }
-
-            UpdateAnimations();
+            else
+            {
+                animator.SetBool("IsRunning", false);
+            }
+            
         }
 
         private void Rotate(Vector3 moveDirection)
@@ -92,9 +98,9 @@ namespace Player
         #endregion
 
         #region Animations
-        private void UpdateAnimations()
+        private void HandleAnimations()
         {
-            float animationSpeed = Mathf.Clamp01(controller.velocity.magnitude);
+            //float animationSpeed = Mathf.Clamp01(controller.velocity.magnitude);
             //animator.SetFloat(Speed, animationSpeed);
         }
         #endregion
