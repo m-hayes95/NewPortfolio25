@@ -1493,16 +1493,22 @@ Transform:
   - {fileID: 767300364}
   m_Father: {fileID: 309064360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &164238589 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2808001186187033729, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
-  m_PrefabInstance: {fileID: 1619980603462520004}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &164238590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4838040094067003737, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
   m_PrefabInstance: {fileID: 1619980603462520004}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &164238594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4663454424667691471, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+  m_PrefabInstance: {fileID: 1619980603462520004}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f534a684f741646b236849db93ca1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &165592641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,11 +3047,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15588e33dc0bb5544b4871a43ad4ef2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiles:
-  - {fileID: 164238589}
-  - {fileID: 860042692}
-  - {fileID: 364634196}
-  - {fileID: 1420551925}
+  OnWin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLose:
+    m_PersistentCalls:
+      m_Calls: []
+  floorTile: {fileID: 164238594}
+  startTiles: []
+  currentTiles: 
 --- !u!1 &253252301
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,11 +4363,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 189361094}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &364634196 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2808001186187033729, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
-  m_PrefabInstance: {fileID: 764077499}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &371515449
 GameObject:
   m_ObjectHideFlags: 0
@@ -8922,6 +8927,14 @@ PrefabInstance:
       propertyPath: floorData
       value: 
       objectReference: {fileID: 11400000, guid: 7cbc0f8e3bc41ea4680b810a730adf55, type: 2}
+    - target: {fileID: 4663454424667691471, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+      propertyPath: OnTileActivate.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663454424667691471, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+      propertyPath: OnTileActivate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4838040094067003737, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -9960,11 +9973,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a457d02d5bf10c9459386d5931ca3a94, type: 3}
---- !u!1 &860042692 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2808001186187033729, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
-  m_PrefabInstance: {fileID: 1193430430}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &866491322
 GameObject:
   m_ObjectHideFlags: 0
@@ -12717,6 +12725,14 @@ PrefabInstance:
       propertyPath: floorData
       value: 
       objectReference: {fileID: 11400000, guid: 819c9f2ae0f1ab74eb0262298d27867d, type: 2}
+    - target: {fileID: 4663454424667691471, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+      propertyPath: OnTileActivate.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663454424667691471, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+      propertyPath: OnTileActivate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4838040094067003737, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -15383,11 +15399,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1060825447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1420551925 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2808001186187033729, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
-  m_PrefabInstance: {fileID: 1860768921}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1422749942
 GameObject:
   m_ObjectHideFlags: 0
@@ -20268,6 +20279,14 @@ PrefabInstance:
       propertyPath: floorData
       value: 
       objectReference: {fileID: 11400000, guid: 7081889183f65854491b092226c42be4, type: 2}
+    - target: {fileID: 4663454424667691471, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+      propertyPath: OnTileActivate.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663454424667691471, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+      propertyPath: OnTileActivate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4838040094067003737, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -23856,6 +23875,14 @@ PrefabInstance:
     - target: {fileID: 2808001186187033729, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
       propertyPath: m_Name
       value: LightPuzzlePiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663454424667691471, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+      propertyPath: OnTileActivate.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663454424667691471, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
+      propertyPath: OnTileActivate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4838040094067003737, guid: 3b9e93b9bba220343b9fe2c1d64712a0, type: 3}
       propertyPath: m_LocalPosition.x

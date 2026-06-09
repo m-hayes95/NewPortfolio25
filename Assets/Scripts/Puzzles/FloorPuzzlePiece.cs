@@ -5,12 +5,14 @@ namespace Puzzles
 {
     public class FloorPuzzlePiece : MonoBehaviour
     {
+        public delegate void TileActivateHandler(int tileId);
+        public TileActivateHandler OnTileActivate;
         [SerializeField] private FloorPuzzleScriptableObject floorData;
 
         private bool isOn = false;
         private bool isLocked = false; // locked when won
+
         private Renderer _renderer;
-        
 
         private void Awake()
         {
@@ -34,13 +36,15 @@ namespace Puzzles
 
         public void ResetTile()
         {
-            if (isLocked) return;
             isOn = false;
+            isLocked = false;   
             _renderer.material = floorData.offMaterial;
         }
         public void LockTile()
         {
             isLocked = true;
+            // If don't set material it may stay off
+            _renderer.material = floorData.onMaterial;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -54,7 +58,14 @@ namespace Puzzles
         private void SwitchTileStatus()
         {
             if(isLocked) return;
+
             isOn = !isOn;
+
+            if (isOn)
+            {
+                OnTileActivate?.Invoke(floorData.iD);
+            }
+
             Invoke(nameof(UpdateMaterial), 0f);
         }
 
