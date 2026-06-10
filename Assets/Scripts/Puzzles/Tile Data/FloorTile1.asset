@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FloorTile1
   m_EditorClassIdentifier: 
   iD: 1
-  onMaterial: {fileID: 2100000, guid: cca996ded623a514a8707be2ffceb187, type: 2}
-  offMaterial: {fileID: 2100000, guid: 7787f845f22551647bc9895b1de09a0d, type: 2}
+  onMaterial: {fileID: 2100000, guid: 16e2acb68004dd24a975df5394fd60f7, type: 2}
+  offMaterial: {fileID: 2100000, guid: 236dd4f596a2d524f8dde7ccde9a6447, type: 2}
